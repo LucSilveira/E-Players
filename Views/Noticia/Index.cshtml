@@ -1,0 +1,47 @@
+@model Noticia
+
+@{
+    ViewData["Title"] = "Noticias";
+}
+
+<form action="@Url.Action("Cadastrar")" method="post" enctype="multipart/form-data">
+    <label for="IdNoticia">IdNoticia</label>
+    <input type="number" name="IdNoticia" id="IdNoticia"/>
+
+    <label for="Titulo">Titulo da notícia</label>
+    <input type="text" name="Titulo" id="Titulo"/>
+
+    <label for="TextoNoticia">Texto da notícia</label>
+    <input type="text" name="TextoNoticia" id="TextoNoticia"/>
+
+    <label for="Imagem">Imagem</label>
+    <input type="file" name="Imagem" id="Imagem"/>
+
+    <button type="submyt">Cadastrar</button>
+</form>
+
+<table class="table table-responsive table-striped">
+    <thead>
+        <th>IdNoticia</th>
+        <th>Titulo</th>
+        <th>TextoNoticia</th>
+        <th>Imagens</th>
+        <th>Ações</th>
+    </thead>
+    <tbody>
+        @foreach(var _item in ViewBag.Noticia)
+        {
+            <tr>
+                <td>@_item.IdNoticia</td>
+                <td>@_item.Titulo</td>
+                <td>@_item.TextoNoticia</td>
+                <td>
+                    <img src="img/Noticia/@_item.Imagem" alt="Imagem da equipe @_item.Titulo"/>
+                </td>
+                <td>
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Noticia" asp-action="Excluir" asp-route-id="@_item.IdNoticia">Excluir</a>
+                </td>
+            </tr>  
+        }
+    </tbody>
+</table>

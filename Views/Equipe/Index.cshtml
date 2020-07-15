@@ -1,0 +1,42 @@
+@model Equipe
+
+@{
+    ViewData["Title"] = "Equipes";
+}
+
+<form action="@Url.Action("Cadastrar")" method="post" enctype="multipart/form-data">
+    <label for="IdEquipe">IdEquipe</label>
+    <input type="number" name="IdEquipe" id="IdEquipe"/>
+
+    <label for="NomeEquipe">Nome da Equipe</label>
+    <input type="text" name="NomeEquipe" id="NomeEquipe"/>
+
+    <label for="Imagem">Imagem</label>
+    <input type="file" name="Imagem" id="Imagem"/>
+
+    <button type="submyt">Cadastrar</button>
+</form>
+
+<table class="table table-responsive table-striped">
+    <thead>
+        <th>IdEquipe</th>
+        <th>Nome</th>
+        <th>Image</th>
+        <th>Ações</th>
+    </thead>
+    <tbody>
+        @foreach(var _item in ViewBag.Equipe)
+        {
+            <tr>
+                <td>@_item.IdEquipe</td>
+                <td>@_item.NomeEquipe</td>
+                <td>
+                    <img src="img/Equipe/@_item.Imagem" alt="Imagem da equipe @_item.NomeEquipe"/>
+                </td>
+                <td>
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Equipe" asp-action="Excluir" asp-route-id="@_item.IdEquipe">Excluir</a>
+                </td>
+            </tr>  
+        }
+    </tbody>
+</table>
