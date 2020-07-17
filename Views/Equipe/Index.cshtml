@@ -4,24 +4,35 @@
     ViewData["Title"] = "Equipes";
 }
 
-<form action="@Url.Action("Cadastrar")" method="post" enctype="multipart/form-data">
-    <label for="IdEquipe">IdEquipe</label>
-    <input type="number" name="IdEquipe" id="IdEquipe"/>
+<div class="titulo_pagina">
+    <h1>cadastro de @ViewData["Title"]</h1>
+</div>
 
-    <label for="NomeEquipe">Nome da Equipe</label>
-    <input type="text" name="NomeEquipe" id="NomeEquipe"/>
+<form action="@Url.Action("Cadastrar")" method="post" class="cadastro" enctype="multipart/form-data">
+    
+    <div class="campo">
+        <label for="IdEquipe">IdEquipe</label>
+        <input type="text" name="IdEquipe" id="IdEquipe"/>
+    </div>
 
-    <label for="Imagem">Imagem</label>
-    <input type="file" name="Imagem" id="Imagem"/>
+    <div class="campo">
+        <label for="NomeEquipe">Nome da Equipe</label>
+        <input type="text" name="NomeEquipe" id="NomeEquipe"/>
+    </div>
 
-    <button type="submyt">Cadastrar</button>
+    <div class="campo">
+        <label for="Imagem">Imagem</label>
+        <input type="file" name="Imagem" id="Imagem"/>
+    </div>
+
+    <button class="gradient btn" type="submyt">Cadastrar</button>
 </form>
 
 <table class="table table-responsive table-striped">
     <thead>
         <th>IdEquipe</th>
         <th>Nome</th>
-        <th>Image</th>
+        <th>Imagem</th>
         <th>Ações</th>
     </thead>
     <tbody>
@@ -34,7 +45,7 @@
                     <img src="img/Equipe/@_item.Imagem" alt="Imagem da equipe @_item.NomeEquipe"/>
                 </td>
                 <td>
-                    <a class="nav-link text-dark" asp-area="" asp-controller="Equipe" asp-action="Excluir" asp-route-id="@_item.IdEquipe">Excluir</a>
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Equipe" asp-action="Excluir" asp-route-id="@_item.IdEquipe"><i class="fa fa-trash"></i></a>
                 </td>
             </tr>  
         }

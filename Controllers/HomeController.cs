@@ -13,6 +13,8 @@ namespace EPlayers_AspNetCore.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
+        Noticia _noticia = new Noticia();
+
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
@@ -20,6 +22,8 @@ namespace EPlayers_AspNetCore.Controllers
 
         public IActionResult Index()
         {
+
+            ViewBag.Home = _noticia.ReadAll();
             return View();
         }
 
