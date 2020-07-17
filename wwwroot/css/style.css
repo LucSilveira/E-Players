@@ -171,6 +171,8 @@ ul{
 }
 .card{
     width: 28%;
+    max-height: 392px;
+    height: 355px;
     margin: 2%;
     box-shadow: 0px 2px 6px #000000;
     background: rgb(0,0,0);
@@ -198,6 +200,7 @@ background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(30,28,33,1) 35%, rgba(3
 }
 .recentes{
     padding: 1.5em;
+    max-height: 755px;
     text-align: center;
     box-shadow: 0px 2px 6px #000000;
     background: rgb(0,0,0);
@@ -231,7 +234,7 @@ footer .sociais{
 footer .container{
     display: flex;
     justify-content: space-between;
-    padding: 2em;
+    padding: 2em 1.5em;
 }
 footer h5{
     padding-bottom: 1.2em;
@@ -254,7 +257,7 @@ footer p{
     text-transform: uppercase;
     background-image: url("../img/pictures/cadastro.png");
     width: 100%;
-    height: 400px;
+    height: 290px;
     background-size: contain;
     background-repeat: no-repeat;
     color: white;
@@ -365,6 +368,10 @@ table a{
     .champion{        
         right: 3%;
         width: 50%;
+        top: 555px;
+    }
+    .card {
+        height: 390px;
     }
     .sobre .container div{
         width: 47%;
@@ -389,8 +396,8 @@ table a{
         width: 98%;
     }
     .champion{
-        right: -12%;
-        top: 580px;
+        right: 0%;
+        top: 640px;
         width: 450px;
     }
     .sobre .container div{
@@ -399,7 +406,7 @@ table a{
 
     }
     .ao_vivo{
-        padding: 5.3em 5px;
+        padding: 0.3em 5px;
         width: 50%;
         flex-wrap: wrap;
     }
@@ -418,9 +425,16 @@ table a{
     .card{
         display: flex;
         width: 100%;
+        height: 155px;
     }
     .card img{
-        width: 30%;
+        width: 35%;
+        height: 155px;
+    }
+    .sobre h1 {
+        z-index: -3;
+        width: 105%;
+        padding-bottom: 20px;
     }
     footer .container{
         width: 90%;
@@ -448,6 +462,9 @@ table a{
         top: 580px;
         width: 450px;
     }
+    .cadastro{
+        max-width: 360px;
+    }
     #menu{
         position: absolute; 
         top: 72px;
@@ -466,6 +483,9 @@ table a{
         padding: 0.5em 60% 1em 2.5em;
         margin: 0.1em 0;
         
+    }
+    .titulo_pagina{
+        height: 150px;
     }
     .cabecalho ul{
         flex-direction: column;
@@ -495,10 +515,12 @@ table a{
     }
    .card{
        flex-direction: column;
-       
+       max-height: 286px;
+       height: 286px;
    }
    .card img{
        width: 100%;
+       height: 130px;
        object-fit:cover ;
        object-position: top;
    }

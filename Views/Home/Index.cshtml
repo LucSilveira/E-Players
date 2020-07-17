@@ -70,6 +70,36 @@
 
 <div class="container content">
     <section class="noticias" asp-controller="Home">
+        <div class="card">
+            <img src="img/Teams/T1.jpeg" alt="Notícia sobra assunto 1">
+            <div>
+                <h4>Título da Noticia</h4>
+                <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos quibusdam quidem praesentium
+                    velit vel sapiente nemo obcaecati veritatis dolorum odio facere, quisquam mollitia quo eum.
+                    Aspernatur quam reiciendis ratione dolorem!</p>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <img src="img/Teams/T2.jpg" alt="Notícia sobra assunto 1">
+            <div>
+                <h4>Título da Noticia</h4>
+                <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos quibusdam quidem praesentium
+                    velit vel sapiente nemo obcaecati veritatis dolorum odio facere, quisquam mollitia quo eum.
+                    Aspernatur quam reiciendis ratione dolorem!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="img/Teams/T3.jpeg" alt="Notícia sobra assunto 1">
+            <div>
+                <h4>Título da Noticia</h4>
+                <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos quibusdam quidem praesentium
+                    velit vel sapiente nemo obcaecati veritatis dolorum odio facere, quisquam mollitia quo eum.
+                    Aspernatur quam reiciendis ratione dolorem!</p>
+            </div>
+        </div>
         @foreach(var _item in ViewBag.Home)
         {
             <div class="card">
@@ -156,6 +186,6 @@
                 <P>3 x 2</p>
             </div>
         </div>
-        <a href="todos_os_resultados.html" class="btn gradient">mais resultados</a>
+        <a asp-controller="Home" asp-action="Index" class="btn gradient">mais resultados</a>
     </section>
 </div>

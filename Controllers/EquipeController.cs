@@ -64,7 +64,6 @@ namespace EPlayers_AspNetCore.Controllers
             return LocalRedirect("~/Equipe");
         }
 
-
         [Route("Equipe/{id}")]
         public IActionResult Excluir(int id)
         {
