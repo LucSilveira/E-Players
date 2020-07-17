@@ -29,7 +29,7 @@ namespace EPlayers_AspNetCore.Controllers
         
             // Tratamento de foto
             var _filePicture = _formulario.Files[0]; //pegando as imagens passadas no formulário
-            var _folderPicture = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/imgs/Equipe"); //Pegando o diretório atual da aplicação e combinar com a foto informada
+            var _folderPicture = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img/Equipe"); //Pegando o diretório atual da aplicação e combinar com a foto informada
 
             if(_filePicture != null)
             {
@@ -40,7 +40,7 @@ namespace EPlayers_AspNetCore.Controllers
                 }
 
                 // Combinando o diretório com a foto inserida
-                var _pathPicture = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/imgs/", _folderPicture, _filePicture.FileName);
+                var _pathPicture = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img/", _folderPicture, _filePicture.FileName);
             
                 // Copiando o arquivo presente no computador para o nosso diretório da aplicação
                 using(var _stream = new FileStream(_pathPicture, FileMode.Create))
